@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JohnMovement : MonoBehaviour
 {
+    public GameObject BulletPrefab;
     public float Speed;
     public float JumpForce;
 
@@ -39,11 +40,21 @@ public class JohnMovement : MonoBehaviour
         {
             Jump();
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Shoot();
+        }
     }
 
     private void Jump()
     {
         Rigidbody2D.AddForce(Vector2.up * JumpForce);
+    }
+
+    private void Shoot()
+    {
+        Instantiate(BulletPrefab, transform.position, Quaternion.identity);
     }
 
     private void FixedUpdate()
