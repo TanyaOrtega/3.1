@@ -12,6 +12,7 @@ public class JohnMovement : MonoBehaviour
     private Animator Animator;
     private float Horizontal;
     private bool Grounded;
+    private float LastShoot;
 
     void Start()
     {
@@ -41,9 +42,10 @@ public class JohnMovement : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Time.time > LastShoot + 0.25f)
         {
             Shoot();
+            LastShoot = Time.time;
         }
     }
 
@@ -53,8 +55,13 @@ public class JohnMovement : MonoBehaviour
     }
 
     private void Shoot()
-    {
-        Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+    { 
+        Vector3 direction;
+        if (transform.localScale.x == 1.0f) direction = Vector3.right;
+        else direction = Vector3.left;
+
+        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet.GetComponent<BulletScript>().SetDirection(direction);
     }
 
     private void FixedUpdate()

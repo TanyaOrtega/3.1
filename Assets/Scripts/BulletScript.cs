@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     public float Speed;
 
     private Rigidbody2D Rigidbody2D;
+    private Vector2 Direction;
    
     void Start()
     {
@@ -15,7 +16,12 @@ public class BulletScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody2D.linearVelocity = Vector2.right * Speed;
+        Rigidbody2D.linearVelocity = Direction * Speed;
 
+    }
+
+    public void SetDirection(Vector2 direction)
+    {
+        Direction = direction;
     }
 }
