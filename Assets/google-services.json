@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "305375674891",
+    "project_id": "unidad3-t",
+    "storage_bucket": "unidad3-t.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305375674891:android:650a2f03e51cd66741bd0e",
+        "android_client_info": {
+          "package_name": "com.tanya.videojuego"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjFg_5M4sTeKd3b0tfgqKapfPTJWK9iEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

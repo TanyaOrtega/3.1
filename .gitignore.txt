@@ -99,3 +99,14 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Ignorar librerías grandes de Firebase
+Assets/Firebase/Plugins/x86_64/
+Assets/Firebase/Plugins/arm64-v8a/
+Assets/Firebase/Plugins/Android/
+Assets/Firebase/Editor/
+Library/
+Temp/
+Obj/
+Build/
+Logs/
